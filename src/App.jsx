@@ -47,7 +47,11 @@ function App() {
       {step === "food" && <FoodChoice onNext={handleFoodNext} />}
 
       {step === "payment" && (
-        <FakePayment onComplete={handlePaymentComplete} />
+        <FakePayment
+          dateInfo={dateInfo}
+          foodChoice={foodChoice}
+          onComplete={handlePaymentComplete}
+        />
       )}
 
       {step === "done" && <FinalPage />}
