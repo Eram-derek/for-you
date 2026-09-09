@@ -1,14 +1,41 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import "./FakePayment.css";
 
-function FakePayment({ onComplete }) {
+function FakePayment({ dateInfo, foodChoice, onComplete }) {
   const [showSuccess, setShowSuccess] = useState(false);
   const [processing, setProcessing] = useState(false);
 
+  const sendEmail = () => {
+    const formattedDate = dateInfo?.date
+      ? new Date(dateInfo.date).toLocaleDateString()
+      : "Not specified";
+    const formattedTime = dateInfo?.time || "Not specified";
+    const formattedFood = foodChoice || "Not specified";
+
+    emailjs
+      .send(
+        "service_abc1234",
+        "template_h5bhwo7",
+        {
+          date: formattedDate,
+          time: formattedTime,
+          food: formattedFood,
+        },
+        "xVNbPlT_Yaf2qzLYt"
+      )
+      .then(() => {
+        console.log("Email sent successfully!");
+      })
+      .catch((error) => {
+        console.error("Email failed to send:", error);
+      });
+  };
+
   const handlePay = () => {
     setProcessing(true);
-    // Fake delay for "processing" feel — no real payment happens
+    sendEmail(); // Email pathano hobe payment button click korার somoy
     setTimeout(() => {
       setProcessing(false);
       setShowSuccess(true);
@@ -25,10 +52,7 @@ function FakePayment({ onComplete }) {
       >
         <AnimatePresence mode="wait">
           {!showSuccess ? (
-            <motion.div
-              key="paymentform"
-              exit={{ opacity: 0, scale: 0.9 }}
-            >
+            <motion.div key="paymentform" exit={{ opacity: 0, scale: 0.9 }}>
               <div className="payment-icon">💳</div>
               <h2 className="payment-title">one small fee</h2>
               <p className="payment-subtext">
@@ -55,7 +79,10 @@ function FakePayment({ onComplete }) {
                 {processing ? "processing... 💸" : "pay $499 & confirm 💝"}
               </button>
 
-              <p className="go-back-text" onClick={() => setShowSuccess(true)}>
+              <p
+                className="go-back-text"
+                onClick={() => setShowSuccess(true)}
+              >
                 go back
               </p>
             </motion.div>
