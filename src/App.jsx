@@ -51,7 +51,7 @@ function App() {
 
       {step === "done" && (
         <div style={{ textAlign: "center", paddingTop: "100px" }}>
-          <h1>🎊 Final page banabo next step e! 🎊</h1>
+          <h1>🎊 Can't wait to see you again 🎊</h1>
         </div>
       )}
     </div>
