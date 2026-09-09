@@ -7,6 +7,7 @@ import Celebration from "./components/Celebration";
 import DateTimePicker from "./components/DateTimePicker";
 import FoodChoice from "./components/FoodChoice";
 import FakePayment from "./components/FakePayment";
+import FinalPage from "./components/FinalPage";
 import "./App.css";
 
 function App() {
@@ -49,11 +50,7 @@ function App() {
         <FakePayment onComplete={handlePaymentComplete} />
       )}
 
-      {step === "done" && (
-        <div style={{ textAlign: "center", paddingTop: "100px" }}>
-          <h1>🎊 Can't wait to see you again 🎊</h1>
-        </div>
-      )}
+      {step === "done" && <FinalPage />}
     </div>
   );
 }
