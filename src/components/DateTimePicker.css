@@ -1,0 +1,79 @@
+.datetime-overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fde2e4, #fad2e1);
+  padding: 20px;
+}
+
+.datetime-card {
+  background: #fffaf5;
+  padding: 40px 35px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 380px;
+  width: 100%;
+}
+
+.datetime-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.datetime-title {
+  font-size: 22px;
+  color: #d6336c;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.datetime-label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.date-input,
+.time-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  outline: none;
+  background: #fafafa;
+}
+
+.time-select {
+  cursor: pointer;
+}
+
+.set-date-btn {
+  width: 100%;
+  background: #d6336c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: transform 0.2s;
+}
+
+.set-date-btn:hover {
+  transform: scale(1.03);
+}
+
+/* React Datepicker override */
+.react-datepicker-wrapper {
+  width: 100%;
+}

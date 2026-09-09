@@ -1,0 +1,60 @@
+.celebration-overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fde2e4, #fad2e1);
+  position: relative;
+  overflow: hidden;
+}
+
+.celebration-card {
+  background: #fffaf5;
+  padding: 50px 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+}
+
+.celebration-icon {
+  width: 90px;
+  height: 90px;
+  background: #ff6b6b;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  margin: 0 auto 20px auto;
+}
+
+.celebration-title {
+  font-size: 24px;
+  color: #d6336c;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.celebration-subtext {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.continue-btn {
+  background: #d6336c;
+  color: white;
+  border: none;
+  padding: 12px 34px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.continue-btn:hover {
+  transform: scale(1.08);
+}

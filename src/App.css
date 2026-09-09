@@ -1,0 +1,82 @@
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.popup-overlay,
+.celebration-overlay,
+.datetime-overlay,
+.food-overlay,
+.payment-overlay {
+  position: relative;
+  z-index: 2;
+}
+/* Mobile responsive fixes */
+@media (max-width: 480px) {
+  .popup-card,
+  .celebration-card,
+  .datetime-card,
+  .food-card,
+  .payment-card,
+  .letter-card {
+    padding: 30px 22px;
+    max-width: 92vw;
+  }
+
+  .popup-question {
+    font-size: 18px;
+  }
+
+  .celebration-title,
+  .datetime-title,
+  .food-title,
+  .payment-title {
+    font-size: 19px;
+  }
+
+  .food-grid {
+    gap: 8px;
+  }
+
+  .food-item {
+    padding: 14px 6px;
+  }
+
+  .food-emoji {
+    font-size: 22px;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .agreement-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-logo {
+    font-size: 14px;
+  }
+
+  .music-player-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}
+
+/* Tablet responsive fixes */
+@media (min-width: 481px) and (max-width: 768px) {
+  .popup-card,
+  .celebration-card,
+  .datetime-card,
+  .food-card,
+  .payment-card,
+  .letter-card {
+    max-width: 420px;
+  }
+}
