@@ -1,0 +1,36 @@
+.final-overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fde2e4, #fad2e1);
+  padding: 20px;
+}
+
+.final-card {
+  background: #fffaf5;
+  padding: 45px 35px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 380px;
+}
+
+.final-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.final-title {
+  font-size: 24px;
+  color: #d6336c;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.final-subtext {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
