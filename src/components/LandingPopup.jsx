@@ -26,7 +26,7 @@ function LandingPopup({ onYes }) {
         <div className="avatar-circle">🐶</div>
 
         <h2 className="popup-question">
-          🌸 Will you go watch a movie with me? 🌸
+          🌸 Will you go to watch a movie with me? 🌸
         </h2>
 
         <div className="button-row">
