@@ -21,7 +21,7 @@ function Navbar() {
   return (
     <>
       <div className="navbar">
-        <div className="navbar-logo">🌸 ourdate</div>
+        <div className="navbar-logo">Don't Cry</div>
 
         <div className="navbar-right">
           <div className="bell-wrapper" onClick={handleBellClick}>
