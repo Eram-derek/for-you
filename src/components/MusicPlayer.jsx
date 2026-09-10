@@ -1,30 +1,29 @@
-import { useRef, useState } from "react";
-import { FaMusic, FaVolumeMute } from "react-icons/fa";
+import { useEffect, useRef } from "react";
 import musicFile from "../assets/music/love-song.mp3";
-import "./MusicPlayer.css";
 
 function MusicPlayer() {
   const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const hasStarted = useRef(false);
 
-  const toggleMusic = () => {
-    if (!audioRef.current) return;
+  useEffect(() => {
+    const startMusic = () => {
+      if (!hasStarted.current && audioRef.current) {
+        audioRef.current.play().catch(() => {});
+        hasStarted.current = true;
+      }
+    };
 
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
+    // Website e first click/touch e gaan shuru hobe
+    window.addEventListener("click", startMusic);
+    window.addEventListener("touchstart", startMusic);
 
-  return (
-    <div className="music-player-btn" onClick={toggleMusic}>
-      <audio ref={audioRef} src={musicFile} loop />
-      {isPlaying ? <FaMusic size={16} /> : <FaVolumeMute size={16} />}
-      <span>{isPlaying ? "playing 🎶" : "play song"}</span>
-    </div>
-  );
+    return () => {
+      window.removeEventListener("click", startMusic);
+      window.removeEventListener("touchstart", startMusic);
+    };
+  }, []);
+
+  return <audio ref={audioRef} src={musicFile} loop />;
 }
 
 export default MusicPlayer;
